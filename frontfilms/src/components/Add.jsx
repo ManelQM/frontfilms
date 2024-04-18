@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { saveDataInStorage } from '../helpers/SaveDataStorage';
 
-export const Add = () => {
+export const Add = ({setListState}) => {
   const addFilm = "Add film"; 
   //Guardar información en el estado del componente
   const [filmState, setFilmState] = useState({
@@ -27,8 +27,14 @@ export const Add = () => {
     };
     // Guardar estado
     setFilmState(film);
+    
+    setListState(items => {
+      return[...items, film];
+    });
     //Llamamos al función para guardar en localstorage
-    saveDataInStorage(film); 
+    saveDataInStorage("films",film); 
+    saveDataInStorage("copia datos", film);
+
   };
 
   return (

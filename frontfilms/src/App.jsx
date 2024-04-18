@@ -2,8 +2,12 @@ import "./index.css";
 import { List } from "./components/List";
 import { Search } from "./components/Search";
 import { Add } from "./components/Add";
+import { useState } from "react";
 
 function App() {
+  
+  const [listState, setListState] = useState([]);
+
   return (
     <div className="layout">
       <header className="header">
@@ -14,28 +18,19 @@ function App() {
       </header>
       <nav className="nav">
         <ul>
-          <li>
-            <a href="#">Inicio</a>
-          </li>
-          <li>
-            <a href="#">Peliculas</a>
-          </li>
-          <li>
-            <a href="#">Blog</a>
-          </li>
-          <li>
-            <a href="#">Contacto</a>
-          </li>
+          <li><a href="#">Inicio</a></li>
+          <li><a href="#">Peliculas</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Contacto</a></li>
         </ul>
-      </nav>
-
+      </nav>  
       <section className="content">
-        <List />
+        <List listState={listState} setListState={setListState} />
       </section>
 
       <aside className="lateral">
         <Search />
-        <Add />
+        <Add setListState={setListState}/>
       </aside>
       <footer className="footer">FOOTER</footer>
     </div>
