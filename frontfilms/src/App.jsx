@@ -1,4 +1,4 @@
-import "./index.css";
+// import "./index.css";
 import { List } from "./components/List";
 import { Search } from "./components/Search";
 import { Add } from "./components/Add";

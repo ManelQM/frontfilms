@@ -86,8 +86,8 @@ body {
 /*ESTILOS PARA EL CONTENIDO PRINCIPAL*/
 .content {
   grid-area: content; 
-  /* border: 5px solid green;
-  background: lightgreen; */
+   /* border: 5px solid green; */
+  /*background: lightgreen; */
   background: #f6f7f9;
   display: flex;
   flex-flow: row wrap;
