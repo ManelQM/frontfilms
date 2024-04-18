@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { saveDataInStorage } from '../helpers/SaveDataStorage';
 
 export const Add = () => {
   const addFilm = "Add film"; 
@@ -13,7 +14,7 @@ export const Add = () => {
   const getDataForm = e => {
     e.preventDefault(); 
 
-    //Conseguir datos form 
+    //Conseguir datos formulario
     let target = e.target; 
     let title = target.title.value;
     let sinopsis = target.sinopsis.value; 
@@ -24,16 +25,18 @@ export const Add = () => {
       title,
       sinopsis,
     };
-
+    // Guardar estado
     setFilmState(film);
-    console.log(filmState);
-  }
+    //Llamamos al función para guardar en localstorage
+    saveDataInStorage(film); 
+  };
+
   return (
     
         <div className="add">
                 <h3 className="title">{addFilm}</h3>
                 <strong>
-                {(title && sinopsis ) && "Film added:" + filmState.title}
+                {(title && sinopsis) && "Film added:" + filmState.title}
                 </strong>
                 <form onSubmit={getDataForm}>
                     <input type="text"
