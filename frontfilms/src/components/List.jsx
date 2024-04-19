@@ -41,7 +41,10 @@ const [edit, setEdit] = useState([]);
 
             {/*Aparece formulario de editar*/}
             {edit === film.id && (
-                <UpdateFilm/>
+                <UpdateFilm film = {film} 
+                            getFilms={getFilms}
+                            setEdit = {setEdit}
+                            setListState = {setListState} />
             )}
           </article>
         );

@@ -29,7 +29,7 @@ function App() {
       </section>
 
       <aside className="lateral">
-        <Search />
+        <Search listState={listState} setListState={setListState}/>
         <Add setListState={setListState}/>
       </aside>
       <footer className="footer">FOOTER</footer>
